@@ -1,6 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: sans-serif;
   font-size: 16px;
+  padding: 1rem;
+}
+
+header,
+main {
+  max-width: 45rem;
+  margin: 0 auto;
 }
 
 .green {
@@ -11,13 +24,32 @@ body {
   background-color: #0a6e05;
   color: white;
   padding: 1rem 2rem;
+  border-color: #97fa7f;
+  border-width: 0 0 10px 0;
+  border-style: solid;
+  border-radius: 10px;
 }
 
-.page-header a {
-  color: #77d4fa;
+.main-nav li {
+  list-style: none;
+  display: inline-block;
+  padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
 }
 
 .store-image {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.store-image img {
+  width: 400px;
 }
