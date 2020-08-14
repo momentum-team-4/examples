@@ -6,6 +6,7 @@
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 
 header,
 main {
-  max-width: 45rem;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -59,16 +60,57 @@ p {
   text-decoration: underline;
 }
 
-.store-image {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.plants {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .plant {
-  margin: 2rem 0;
+  width: 360px;
+  margin: 2rem 1rem 2rem 0;
 }
 
-.plant h3 {
+.plant-header {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background-color: black;
+  color: white;
   margin-bottom: 1rem;
-  font-family: Oswald;
+  font-size: 2rem;
+}
+
+.hyacinth {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(images/wild-hyacinth.jpg) no-repeat center/cover;
+}
+
+.hyacinth:hover {
+  background: url(images/wild-hyacinth.jpg) no-repeat center/cover;
+}
+
+.lily {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(images/lily-of-the-valley.jpg) no-repeat center/cover;
+}
+
+.imperials {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(images/crown-imperials.jpg) no-repeat center/cover;
+}
+
+.starflower {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(images/spring-starflower.jpg) no-repeat center/cover;
+}
+
+.buttercup {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(images/persian-buttercup.jpg) no-repeat center/cover;
+}
+
+.tulips {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(images/tulips.jpg) no-repeat center/cover;
 }
