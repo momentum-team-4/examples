@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.resume-title {
+  margin-bottom: 1rem;
+}
+
+.resume-name {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  margin-bottom: 1rem;
+}
+
+.objective {
+  font-style: italic;
+}
+
+.employment {
+  margin: 1rem 0;
+}
+
+.job {
+  margin: 1rem 0;
+}
+
+.employer {
+  font-weight: bold;
+}
+
+.big-screen {
+  display: none;
+}
+
+.small-screen {
+  font-size: 0.5rem;
+  color: greenyellow;
+  background-color: black;
+}
+
+@media screen and (min-width: 800px) {
+  .contact-info {
+    text-align: right;
+  }
+
+  .resume-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .employer-and-dates {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .md-flex {
+    display: flex;
+  }
+
+  .md-flex-space-between {
+    justify-content: space-between;
+  }
+
+  .big-screen {
+    display: block;
+    font-size: 10rem;
+    color: hotpink;
+  }
+
+  .small-screen {
+    display: none;
+  }
+}
