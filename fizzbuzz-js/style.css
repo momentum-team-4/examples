@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.main {
+  max-width: 38rem;
+  padding: 1.5rem;
+  margin: auto;
+}
+
+.user-input {
+  margin: 1rem 0;
+}
+
+.user-input div {
+  margin: 0.5rem 0;
+}
+
+.user-input button {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.output {
+  border: 1px solid #CCCCCC;
+  margin: 2rem 0 1rem 0;
+  padding: 1rem;
+  font-family: monospace;
+  line-height: 1.2;
+}
