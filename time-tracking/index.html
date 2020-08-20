@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" async></script>
+</head>
+
+<body>
+  <main class="main">
+    <form id="tracker-form">
+      <div class="input-field">
+        <label for="client">Client</label>
+        <input type="text" id="client" name="client" required>
+      </div>
+
+      <div class="input-field">
+        <label for="start-time">Start time</label>
+        <input type="time" id="start-time" name="start-time" required min="08:00" max="19:00">
+      </div>
+
+      <div class="input-field">
+        <label for="end-time">End time</label>
+        <input type="time" id="end-time" name="end-time" required min="08:00" max="19:00">
+      </div>
+
+      <div class="input-field">
+        <label for="description">Description (optional)</label>
+        <textarea id="description" name="description"></textarea>
+      </div>
+
+      <div class="input-field">
+        <button type="submit">Add time entry</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+
+    <div id="entries"><ul></ul></div>
+  </main>
+</body>
+
+</html>
