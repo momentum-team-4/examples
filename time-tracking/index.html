@@ -19,12 +19,14 @@
 
       <div class="input-field">
         <label for="start-time">Start time</label>
-        <input type="time" id="start-time" name="start-time" required min="08:00" max="19:00">
+        <input class="time-input" type="time" id="start-time" name="start-time" required
+          min="08:00" max="19:00">
       </div>
 
       <div class="input-field">
         <label for="end-time">End time</label>
-        <input type="time" id="end-time" name="end-time" required min="08:00" max="19:00">
+        <input class="time-input" type="time" id="end-time" name="end-time" required min="08:00"
+          max="19:00">
       </div>
 
       <div class="input-field">
@@ -38,7 +40,20 @@
       </div>
     </form>
 
-    <div id="entries"><ul></ul></div>
+    <div>
+      <table id="time-entries">
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Start time</th>
+            <th>End time</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
   </main>
 </body>
 
