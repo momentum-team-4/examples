@@ -22,7 +22,6 @@ function renderPageContent () {
 function createImageElement (url) {
   let imageEl = document.createElement('img')
   // give img a src attribute that is a url
-  // we get that url from the first object in the array of objects
   imageEl.src = url
   return imageEl
 }
