@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 2rem auto;
+  max-width: 50rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.customer-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.customer {
+  margin: 1rem;
+  text-align: center;
+}
+
+.customer__img {
+  border-radius: 50%;
+  padding-bottom: 1rem;
+}
+
+.customer__name {
+  padding-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.customer__email {
+  color: #444444;
+  padding-bottom: 0.5rem;
+}
+
+.customer__address {
+  padding-bottom: 0.5rem;
+  text-transform: capitalize;
+}
