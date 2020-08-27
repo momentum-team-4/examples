@@ -18,8 +18,8 @@ window.addEventListener('load', function () {
       if (questions.length > 0) {
         showNextQuestion()
       } else {
-        document.querySelector("#question").innerHTML = 'Game over!'
-        document.querySelector("#answers").innerHTML = ''
+        document.querySelector('#question').innerHTML = 'Game over!'
+        document.querySelector('#answers').innerHTML = ''
       }
     }
   })

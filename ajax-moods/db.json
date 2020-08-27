@@ -1,0 +1,28 @@
+{
+  "moods": [
+    {
+      "id": 1,
+      "mood": 4,
+      "activities": [
+        "working",
+        "cleaning"
+      ],
+      "datetime": "2020-08-25 09:00"
+    },
+    {
+      "mood": "3",
+      "datetime": "2020-08-27 16:17",
+      "id": 5
+    },
+    {
+      "mood": "4",
+      "datetime": "2020-08-27 16:27",
+      "id": 6
+    },
+    {
+      "mood": "3",
+      "datetime": "2020-08-27 16:29",
+      "id": 7
+    }
+  ]
+}

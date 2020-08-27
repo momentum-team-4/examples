@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="moment.min.js" async></script>
+  <script src="script.js" async></script>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+  <title>Mood Tracker</title>
+</head>
+<body class="sans-serif">
+<div class="mw8 pa1 center tc">
+  <h1 class="tc mt2 mb3">How Are You Doing?</h1>
+  <form id="new-mood-form">
+    <div class="mv3 f1"><label id="mood-label" for="mood"></label></div>
+    <div class="mv3">
+      <input id="mood" name="mood" type="range" min="1" max="5">
+    </div>
+
+    <div class="mv3">
+      <button type="submit" class="f3 grow br3 ph3 pv2 mb2 white bg-dark-blue pointer">Record it!</button>
+    </div>
+  </form>
+
+  <div id="moods" class="mw7 center">
+  </div>
+</div>
+</body>
+</html>
