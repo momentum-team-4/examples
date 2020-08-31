@@ -33,17 +33,21 @@ moodInput.addEventListener('input', setMoodLabel)
 // store mood when I submit the new mood form
 
 //  - update the list of previous moods at the bottom of page
+// STOP HERE
 newMoodForm.addEventListener('submit', function (event) {
   event.preventDefault()
   //  - send a request to the API to save the mood
   fetch('http://localhost:3000/moods/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ mood: moodInput.value, datetime: moment().format('YYYY-MM-DD HH:mm') })
+    body: JSON.stringify({
+      mood: moodInput.value,
+      datetime: moment().format('YYYY-MM-DD HH:mm')
+    })
   })
     .then(r => r.json())
-    .then(newMood => {
-      const newMoodEl = createMoodEl(newMood)
+    .then(newMoodEntry => {
+      const newMoodEl = createMoodEl(newMoodEntry)
       addToMoodsDiv(newMoodEl)
     })
 })
@@ -53,7 +57,7 @@ newMoodForm.addEventListener('submit', function (event) {
 function getMoodEmoji (moodLevel) {
   const moodEmojis = [
     '😢', // 1
-    '🙁', // 2 - ☹️
+    '🙁', // 2
     '😐', // 3
     '🙂', // 4
     '😁' // 5
@@ -68,6 +72,22 @@ function setMoodLabel () {
 }
 
 function createMoodEl (mood) {
+  /* mood is an object like:
+  {
+    id: 7,
+    mood: 3,
+    datetime: "2020-08-27 16:29"
+  }
+
+  The final element looks like
+  <div id="mood-7" class="pa2 bg-light-blue f3 flex justify-between mv2">
+    <div>Aug 27 4:29 PM</div>
+    <div>
+      <button class="f5 bg-red white br3 ph3 pv2 mb2 pointer">Delete</button>
+    </div>
+    <div>😐</div>
+  </div>
+  */
   const el = document.createElement('div')
   el.id = 'mood-' + mood.id
   el.classList.add('pa2', 'bg-light-blue', 'f3', 'flex', 'justify-between', 'mv2')
