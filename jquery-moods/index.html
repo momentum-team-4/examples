@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" defer></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.js" integrity="sha512-WZ3VAWLJDOQRwRtR4nkn7g7Fb+TSDtdpdQdJgM5tSn82RKD/O84EqMPKqvF+3ypk5+IErlevC4WpbdbRG65uIg==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.css" integrity="sha512-WUYSspsMSeZ5Rh9CMn8wP9W+8/1ukN1r0CJjw5ZNCCZkM49nig92GzbOur5CpoDcnT+4gVMbPZB5P3su7Z799Q==" crossorigin="anonymous" />
+  <script src="moment.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+  <title>Mood Tracker</title>
+</head>
+<body class="sans-serif">
+<div class="mw8 pa1 center tc">
+  <h1 class="tc mt2 mb3">How Are You Doing?</h1>
+  <form id="new-mood-form">
+    <div class="mv3 f1"><label id="mood-label" for="mood"></label></div>
+    <div class="mv3">
+      <input id="mood" name="mood" type="range" min="1" max="5">
+    </div>
+
+    <div class="mv3">
+      <div class="tc"><label for="activities">Activities</label></div>
+      <div>
+        <select id="activities" name="activities" multiple>
+          <option>Working</option>
+          <option>Relaxing</option>
+          <option>Cleaning</option>
+          <option>Exercise</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mv3">
+      <button type="submit" class="f3 grow br3 ph3 pv2 mb2 white bg-dark-blue pointer">Record it!</button>
+    </div>
+  </form>
+
+  <div id="moods" class="mw7 center">
+  </div>
+</div>
+</body>
+</html>
