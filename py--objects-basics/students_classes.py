@@ -21,9 +21,13 @@ class Student:
         non-instance argument is not an instance fo Student.
     """
     def __init__(self, name, team, pet):
-        self.name = name
-        self.team = team
-        self.pet = pet
+        self.__name = name
+        self.__team = team
+        self.__pet = pet
+
+    @property
+    def name(self):
+        return self.__name 
 
     def __eq__(self, other):
         if isinstance(other, Student):
