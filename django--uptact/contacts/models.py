@@ -21,9 +21,18 @@ class Contact(models.Model):
     state = USStateField(null=True, blank=True)
     zip_code = USZipCodeField(null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    note = models.ForeignKey("Note", on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
         return f"{self.name}"
 
     def __repr__(self):
         return f"<Contact pk={self.pk} name={self.name}>"
+
+
+class Note(models.Model):
+    timestamp = models.DateTimeField(auto_now_add=True)
+    body = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.body}"

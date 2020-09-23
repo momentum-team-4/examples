@@ -1,4 +1,4 @@
-"""uptact URL Configuration
+"""notesapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,26 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
-from contacts import views as contacts_views
+from notes import views as notes_views
 from users import views as users_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', contacts_views.list_contacts, name='list_contacts'),
-    path('contacts/<int:pk>/note/add/', contacts_views.add_note, name='note_add'),
-    path('contacts/<int:pk>/note/edit/', contacts_views.edit_note, name='note_edit'),
-    path('contacts/<int:pk>/note/delete/', contacts_views.delete_note, name='delete_note'),
-    path('contacts/add/', contacts_views.add_contact, name='add_contact'),
-    path('contacts/<int:pk>/edit/',
-         contacts_views.edit_contact,
-         name='edit_contact'),
-    path('contacts/<int:pk>/delete/',
-         contacts_views.delete_contact,
-         name='delete_contact'),
-    path('users/create/', users_views.create_user, name='create_user'),
-    path('users/login/', users_views.login_user, name='login_user'),
-    path('users/logout/', users_views.logout_user, name='logout_user'),
-
+    path('', notes_views.notes_list, name='notes_list'),
+    path('notes/<int:pk>/', notes_views.notes_detail, name='notes_detail'),
+    path('notes/create/', notes_views.notes_create, name='notes_create'),
 ]
 
 if settings.DEBUG:

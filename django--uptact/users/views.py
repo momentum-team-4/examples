@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.messages import success, error
 from .forms import UserCreationForm
 from .models import User
 
@@ -27,8 +28,12 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
+            success(request, "login successful!")
             login(request, user)
             redirect(to='list_contacts')
+
+        else:
+            error(request, "no matching username/password combination.")
 
     return render(request, "users/login_user.html")
 
