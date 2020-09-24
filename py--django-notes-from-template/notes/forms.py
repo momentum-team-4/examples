@@ -3,4 +3,9 @@ from .models import Note
 
 
 class NoteForm(ModelForm):
-    pass
+    class Meta:
+        model = Note
+        fields = [
+            'title',
+            'body',
+        ]
