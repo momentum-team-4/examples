@@ -25,7 +25,8 @@ urlpatterns = [
     path('', notes_views.notes_list, name='notes_list'),
     path('notes/<int:pk>/', notes_views.notes_detail, name='notes_detail'),
     path('notes/create/', notes_views.notes_create, name='notes_create'),
-    path('notes/update/<int:pk>/', notes_views.notes_update, name='notes_update')
+    path('notes/update/<int:pk>/', notes_views.notes_update, name='notes_update'),
+    path('notes/search/', notes_views.notes_search, name='notes_search'),
 ]
 
 if settings.DEBUG:

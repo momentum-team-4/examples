@@ -10,11 +10,22 @@
         <title>Notes!</title>
     </head>
     <body>
+        <nav>
+            <a href="{% url 'notes_list' %}">Index</a>
+            <a href="{% url 'notes_search' %}">Search</a>
+        </nav>
         {% if messages %}
             {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <p class="error-message">{{ message }}</p>
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <p class="success-message">{{ message }}</p>
+                {% else %}
                 <p>{{ message }}</p>
+                {% endif %}
             {% endfor %}
         {% endif %}
+
         {% block content %}
         {% endblock %}
     </body>
