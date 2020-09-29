@@ -1,20 +1,28 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, JsonResponse
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
 from django.contrib.messages import success, error
 from .models import Note
 from .forms import NoteForm, NoteSearchForm
 
 
+@login_required
 def notes_list(request):
-    notes = Note.objects.all()
+    user = request.user
+    notes = Note.objects.filter(user=user)
     return render(request, "notes/notes_list.html", {"notes": notes})
 
 
+@login_required
 def notes_detail(request, pk):
     note = get_object_or_404(Note, pk=pk)
     
     return render(request, "notes/notes_detail.html", {"note": note})
 
 
+@login_required
 def notes_create(request):
     if request.method == "GET":
         form = NoteForm()
@@ -31,6 +39,7 @@ def notes_create(request):
     return render(request, "notes/notes_create.html", {"form": form})
 
 
+@login_required
 def notes_update(request, pk):
     note = get_object_or_404(Note, pk=pk)
 
@@ -49,6 +58,7 @@ def notes_update(request, pk):
     return render(request, "notes/notes_update.html", {"form": form})
 
 
+@login_required
 def notes_delete(request, pk):
     if request.method == "GET":
         return render(request, "notes/notes_delete.html")
@@ -61,6 +71,7 @@ def notes_delete(request, pk):
         return redirect(to="notes_list")
 
 
+@login_required
 def notes_search(request):
     if request.method == "GET":
         form = NoteSearchForm()
@@ -72,7 +83,7 @@ def notes_search(request):
         body_text = request.POST['body']
         body_search_criteria = request.POST['body_search_by']
 
-        results = Note.objects.all()
+        results = Note.objects.filter(user=request.user)
 
         if title_search_criteria == 'contains':
             results = results.filter(title__contains=title_text)
@@ -85,5 +96,7 @@ def notes_search(request):
 
         else:
             results = results.filter(body=body_text)
+
+        results = results.order_by('title', 'body')
 
         return render(request, "notes/notes_search_results.html", {"results": results})

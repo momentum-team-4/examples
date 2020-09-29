@@ -13,8 +13,6 @@ werkzeug = "*"
 django-environ = "*"
 django-rest-framework = "*"
 django-registration-redux = "*"
-markdown = "*"
-django-filter = "*"
 
 [requires]
 python_version = "3.8"

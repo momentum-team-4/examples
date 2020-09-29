@@ -7,9 +7,14 @@ class NoteSearchForm(Form):
         ("contains", "contains"),
         ("exact match", "exact match"),
     ]
+    ORDER_BY_CHOICES = [
+        ("title", "title"),
+        ("body", "body"),
+    ]
 
     title = CharField()
     title_search_by = ChoiceField(choices=SEARCH_BY_CHOICES)
+    title_order_by = ChoiceField(choices=ORDER_BY_CHOICES)
     body = CharField()
     body_search_by = ChoiceField(choices=SEARCH_BY_CHOICES)
 

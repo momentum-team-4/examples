@@ -1,4 +1,4 @@
-"""notesapp URL Configuration
+"""notes_restful URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,21 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
-from notes import views as notes_views
-from users import views as users_views
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', notes_views.notes_list, name='notes_list_self'),
-    path('login_required/', notes_views.login_required, name='login_required'),
-    path('notes/<int:pk>/', notes_views.notes_detail, name='notes_detail'),
-    path('notes/create/', notes_views.notes_create, name='notes_create'),
-    path('notes/update/<int:pk>/', notes_views.notes_update, name='notes_update'),
-    path('notes/search/', notes_views.notes_search, name='notes_search'),
-    path('users/create/', users_views.users_create, name='users_create'),
-    path('users/login/', users_views.users_login, name='users_login'),
-    path('users/logout/', users_views.users_logout, name='users_logout')
 ]
 
 if settings.DEBUG:
